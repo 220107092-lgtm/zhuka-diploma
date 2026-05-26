@@ -3160,13 +3160,10 @@ document.querySelectorAll('.fcard').forEach(card => {
 
 // Cycle tabs
 function showCycle(idx,btn){
-  // Stop videos when leaving cycle 0
   var v1=document.getElementById('yt-vid-1');
   var v2=document.getElementById('yt-vid-2');
-  if(v1&&idx!==0){v1.src=v1.src.replace('&autoplay=1','');}
-  if(v2&&idx!==0){v2.src=v2.src.replace('&autoplay=1','');}
-  if(v1&&idx===0){v1.src=v1.dataset.src;}
-  if(v2&&idx===0){v2.src=v2.dataset.src;}
+  if(v1){idx===0?v1.play():v1.pause();}
+  if(v2){idx===0?v2.play():v2.pause();}
 
   document.querySelectorAll('.cycle-panels').forEach((p,i)=>p.classList.toggle('active',i===idx));
   document.querySelectorAll('.ctab').forEach((b,i)=>b.classList.toggle('active',i===idx));
