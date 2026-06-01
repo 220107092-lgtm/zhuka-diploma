@@ -409,8 +409,8 @@ section:nth-child(odd)  { background: var(--white); }
 .nt strong { color: #fff; font-weight: 700; font-family: 'Montserrat', sans-serif; letter-spacing: .03em; }
 
 .ni:nth-child(1) { transition-delay: 0s; }
-.ni:nth-child(2) { transition-delay: .7s; }
-.ni:nth-child(3) { transition-delay: 1.4s; }
+.ni:nth-child(2) { transition-delay: 0s; }
+.ni:nth-child(3) { transition-delay: 0s; }
 
 /* ═══════════ НЫСАНДАР — flip cards ═══════════ */
 
@@ -1184,8 +1184,8 @@ section:nth-child(odd)  { background: var(--white); }
 .nt strong { color: #fff; font-weight: 700; font-family: 'Montserrat', sans-serif; letter-spacing: .03em; }
 
 .ni:nth-child(1) { transition-delay: 0s; }
-.ni:nth-child(2) { transition-delay: .7s; }
-.ni:nth-child(3) { transition-delay: 1.4s; }
+.ni:nth-child(2) { transition-delay: 0s; }
+.ni:nth-child(3) { transition-delay: 0s; }
 
 /* ═══════════ НЫСАНДАР — flip cards ═══════════ */
 
@@ -3323,13 +3323,17 @@ const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
 }),{threshold:.1});
 document.querySelectorAll('.rv,.vtl-step,.pc').forEach(el=>obs.observe(el));
 
-// Slide 3: click once → items appear one by one quickly
+// Slide 3: each click reveals the next item one by one
 (function(){
   const section = document.getElementById('s-mind');
   const items = Array.from(section.querySelectorAll('.ni'));
+  let step = 0;
   section.addEventListener('click', function(){
-    items.forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 200));
-  }, {once: true});
+    if (step < items.length) {
+      items[step].classList.add('visible');
+      step++;
+    }
+  });
 })();
 
 // Flip back reveals frows one by one on click
