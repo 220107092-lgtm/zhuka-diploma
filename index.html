@@ -2711,7 +2711,7 @@ section:nth-child(odd)  { background: var(--white); }
     </div>
     <div class="cycle-panels" id="cp2">
       <div class="cp0-desc-block">
-        <p>Сабақ слайды: Canva, топқа бөлу: Classroomscreen, сәйкестендіру: Learningapps.org, тапсырма орындау: Desmos, WolframAlpha платформалары.</p>
+        <p>Сабақ слайды: Canva, топқа бөлу: Classroomscreen, сәйкестендіру: Learningapps.org, тапсырма орындау: Desmos, WolframAlpha платформалары</p>
       </div>
       <div class="cp0-main">
         <div class="cp0-left">
@@ -2735,7 +2735,7 @@ section:nth-child(odd)  { background: var(--white); }
 
     <div class="cycle-panels" id="cp3">
       <div class="cp0-desc-block">
-        <p>Слайд: Canva, жұптық жұмыс: Wordwall, топтық жұмыс: Puzzlezilla платформасы.</p>
+        <p>Слайд: Canva, жұптық жұмыс: Wordwall, топтық жұмыс: Puzzlezilla платформасы</p>
       </div>
       <div class="cp0-main">
 
@@ -2817,7 +2817,7 @@ section:nth-child(odd)  { background: var(--white); }
         <div class="tchip"><span class="tchi">📓</span> NotebookLM</div>
         <div class="tchip"><span class="tchi">🖥️</span> Classroomscreen</div>
         <div class="tchip"><span class="tchi">🤖</span> Gemini</div>
-        <div class="tchip"><span class="tchi">🎬</span> ЖИ арқылы жасалған видеолар / карточкалар</div>
+        <div class="tchip"><span class="tchi">🎬</span> ЖИ арқылы жасалған карточкалар</div>
         <div class="tchip"><span class="tchi">🔗</span> Learningapps.org</div>
         <div class="tchip"><span class="tchi">🧩</span> Puzzlezilla</div>
         <div class="tchip"><span class="tchi">🎯</span> Wordwall</div>
@@ -3372,7 +3372,7 @@ function showCycle(idx,btn){
   document.querySelectorAll('.ctab').forEach((b,i)=>b.classList.toggle('active',i===idx));
 }
 
-document.querySelectorAll('#yt-vid-1,#yt-vid-2,#yt-vid-3').forEach(function(v){
+document.querySelectorAll('video').forEach(function(v){
   v.style.cursor='pointer';
   v.addEventListener('click',function(){
     if(v.paused){v.play();}else{v.pause();}
